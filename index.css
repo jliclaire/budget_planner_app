@@ -13,9 +13,16 @@ select {
   width: 100%;
 }
 
+input[type='date'] {
+  height: 35px;
+  width: 98%;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+}
+
 button {
   background: #0A136A;
-  color: #FECC06;
+  color: #ffffff;
 }
 
 #income,
