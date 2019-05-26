@@ -13,77 +13,88 @@
 <body>
   <div class="container">
     <div class="form-container">
-      <div id="income">
-        <h5>New Income</h5>
-        <form id="income-form" action="">
-          <div>
-            <label for="income-amount">Amount</label>
-            <input type="number" id="income-amount">
-          </div>
-          <div>
-            <label for="income-category">Type</label>
-            <select name="" id="income-category">
-              <option class="select">Select</option>
-              <option id="salary">Salary</option>
-              <option id="bonus">Bonus</option>
-              <option id="interest">Interest</option>
-              <option id="refund">Refund</option>
-            </select>
-          </div>
-          <div>
-            <label for="income-account">Account</label>
-            <select name="" id="income-account">
-              <option class="select">Select</option>
-              <option class="bank">Bank</option>
-              <option class="cash">Cash</option>
-              <option class="creditcard">Credit Card</option>
-            </select>
-          </div>
-          <div>
-            <label for="income-date">Date</label>
-            <input type="date">
-          </div>
-          <button id="income-save">Save</button>
-        </form>
+      <!-- code for toggle income and expense to show single form -->
+      <div id="toggle-form">
+
+        <div id="form-nav" class="form-nav-income-border">
+          <button class="form-nav-item" id="show-income-form-btn">Income</button>
+          <button class="form-nav-item" id="show-expense-form-btn">Expense</button>
+          <button class="form-nav-item" id="show-transfer-form-btn">Transfer</button>
+        </div>
+
+        <!-- show income form (default: show) -->
+        <div class="income-form-style form">
+          <form id="income-form" action="">
+            <div>
+              <label for="income-amount">Amount</label>
+              <input type="number" id="income-amount">
+            </div>
+            <div>
+              <label for="income-category">Type</label>
+              <select name="" id="income-category">
+                <option class="select">Select</option>
+                <option id="salary">Salary</option>
+                <option id="bonus">Bonus</option>
+                <option id="interest">Interest</option>
+                <option id="refund">Refund</option>
+              </select>
+            </div>
+            <div>
+              <label for="income-account">Account</label>
+              <select name="" id="income-account">
+                <option class="select">Select</option>
+                <option class="bank">Bank</option>
+                <option class="cash">Cash</option>
+                <option class="creditcard">Credit Card</option>
+              </select>
+            </div>
+            <div>
+              <label for="income-date">Date</label>
+              <input type="date">
+            </div>
+            <button id="income-save">Save</button>
+          </form>
+        </div>
+
+        <!-- show expense form (default: hidden) -->
+        <div class="expense-form-style form">
+          <form id="exp-form" action="">
+            <div>
+              <label for="exp-amount">Amount</label>
+              <input type="number" id="exp-amount">
+            </div>
+            <div>
+              <label for="exp-category">Category</label>
+              <select name="" id="exp-category">
+                <option class="select">Select</option>
+                <option id="homebill">Homebill</option>
+                <option id="transport">Transport</option>
+                <option id="clothes">Clothes</option>
+                <option id="food">Food</option>
+                <option id="entertainment">Entertainment</option>
+              </select>
+            </div>
+            <div>
+              <label for="exp-account">Account</label>
+              <select name="" id="exp-account">
+                <option class="select">Select</option>
+                <option class="bank">Bank</option>
+                <option class="cash">Cash</option>
+                <option class="creditcard">Credit Card</option>
+              </select>
+            </div>
+            <div>
+              <label for="exp-date">Date</label>
+              <input type="date">
+            </div>
+            <button id="exp-save">Save</button>
+          </form>
+        </div>
       </div>
 
-      <div id="expense">
-        <h5>New Expense</h5>
-        <form id="exp-form" action="">
-          <div>
-            <label for="exp-amount">Amount</label>
-            <input type="number" id="exp-amount">
-          </div>
-          <div>
-            <label for="exp-category">Category</label>
-            <select name="" id="exp-category">
-              <option class="select">Select</option>
-              <option id="homebill">Homebill</option>
-              <option id="transport">Transport</option>
-              <option id="clothes">Clothes</option>
-              <option id="food">Food</option>
-              <option id="entertainment">Entertainment</option>
-            </select>
-          </div>
-          <div>
-            <label for="exp-account">Account</label>
-            <select name="" id="exp-account">
-              <option class="select">Select</option>
-              <option class="bank">Bank</option>
-              <option class="cash">Cash</option>
-              <option class="creditcard">Credit Card</option>
-            </select>
-          </div>
-          <div>
-            <label for="exp-date">Date</label>
-            <input type="date">
-          </div>
-          <button id="exp-save">Save</button>
-        </form>
-      </div>
 
       <div id="summary">
-        <h3>Summary</h3>
+        <h3>SUMMARY</h3>
         <div class="income-sum">
           <h5>Income</h5>
           <div id="income-display-row">
@@ -121,6 +132,12 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+
 
     <div class="bs"></div>
   </div>

@@ -3,9 +3,9 @@
   padding: 0px;
 }
 
-.form-container {
-  display: flex;
-  justify-content: space-between;
+button {
+  border: none;
+  border-radius: 0px;
 }
 
 input,
@@ -13,23 +13,94 @@ select {
   width: 100%;
 }
 
+/* form styling */
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+#toggle-form {
+  width: 40%;
+}
+
+.form-nav {
+  display: flex;
+  align-content: flex-end;
+}
+
+.form-nav-income-border {
+  border-bottom: 3px solid #fecc06;
+}
+
+.form-nav-expense-border {
+  border-bottom: 3px solid #0A136A;
+}
+
+.form-nav-item {
+  margin-bottom: 0px;
+}
+
+/* income form styling */
+.income-form-style {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #fecc06;
+}
+
+#income-form {
+  width: 100%;
+}
+
+#income-form input,
+#income-form select {
+  border: 1px solid #fecc06;
+}
+
 input[type='date'] {
   height: 35px;
-  width: 98%;
-  border: 1px solid #D1D1D1;
+  width: 99.3%;
   border-radius: 4px;
 }
 
-button {
-  background: #0A136A;
+#show-income-form-btn,
+#income-save {
   color: #ffffff;
+  background: #fecc06;
 }
 
-#income,
-#expense {
-  width: 20%;
+#income-save {
+  border-radius: 4px;
 }
 
+/* expense form styling */
+.expense-form-style {
+  display: flex;
+  justify-content: center;
+  color: #0A136A;
+}
+
+#exp-form {
+  width: 100%;
+}
+
+#show-expense-form-btn {
+  color: #0A136A;
+}
+
+#exp-save {
+  background-color: #0A136A;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+#exp-form input,
+#exp-form select {
+  border: 1px solid #0A136A;
+}
+
+/* summary styling */
 #summary {
   width: 40%;
 }
@@ -42,15 +113,24 @@ button {
 h3 {
   color: #F6A204;
   font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h5 {
   color: #0A136A;
   font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h6,
 .total-bold {
   font-weight: 900;
   color: #FECC06;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* function css */
+#exp-form {
+  display: none;
 }
