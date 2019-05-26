@@ -1,0 +1,49 @@
+. {
+  margin: 0px;
+  padding: 0px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+input,
+select {
+  width: 100%;
+}
+
+button {
+  background: #0A136A;
+  color: #FECC06;
+}
+
+#income,
+#expense {
+  width: 20%;
+}
+
+#summary {
+  width: 40%;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  color: #F6A204;
+  font-weight: 600;
+}
+
+h5 {
+  color: #0A136A;
+  font-weight: 600;
+}
+
+h6,
+.total-bold {
+  font-weight: 900;
+  color: #FECC06;
+}

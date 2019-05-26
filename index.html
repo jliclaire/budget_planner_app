@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css'>
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div id="income">
+        <h5>New Income</h5>
+        <form id="income-form" action="">
+          <div>
+            <label for="income-amount">Amount</label>
+            <input type="number" id="income-amount">
+          </div>
+          <div>
+            <label for="income-category">Type</label>
+            <select name="" id="income-category">
+              <option class="select">Select</option>
+              <option id="salary">Salary</option>
+              <option id="bonus">Bonus</option>
+              <option id="interest">Interest</option>
+              <option id="refund">Refund</option>
+            </select>
+          </div>
+          <div>
+            <label for="income-account">Account</label>
+            <select name="" id="income-account">
+              <option class="select">Select</option>
+              <option class="bank">Bank</option>
+              <option class="cash">Cash</option>
+              <option class="creditcard">Credit Card</option>
+            </select>
+          </div>
+          <div>
+            <label for="income-date">Date</label>
+            <input type="date">
+          </div>
+          <button id="income-save">Save</button>
+        </form>
+      </div>
+
+      <div id="expense">
+        <h5>New Expense</h5>
+        <form id="exp-form" action="">
+          <div>
+            <label for="exp-amount">Amount</label>
+            <input type="number" id="exp-amount">
+          </div>
+          <div>
+            <label for="exp-category">Category</label>
+            <select name="" id="exp-category">
+              <option class="select">Select</option>
+              <option id="homebill">Homebill</option>
+              <option id="transport">Transport</option>
+              <option id="clothes">Clothes</option>
+              <option id="food">Food</option>
+              <option id="entertainment">Entertainment</option>
+            </select>
+          </div>
+          <div>
+            <label for="exp-account">Account</label>
+            <select name="" id="exp-account">
+              <option class="select">Select</option>
+              <option class="bank">Bank</option>
+              <option class="cash">Cash</option>
+              <option class="creditcard">Credit Card</option>
+            </select>
+          </div>
+          <div>
+            <label for="exp-date">Date</label>
+            <input type="date">
+          </div>
+          <button id="exp-save">Save</button>
+        </form>
+      </div>
+
+      <div id="summary">
+        <h3>Summary</h3>
+        <div class="income-sum">
+          <h5>Income</h5>
+          <div id="income-display-row">
+            <!-- <div class="summary-row">
+            <div class="income-sum-type"></div>
+            <div class="income-sum-amount"></div>
+          </div> -->
+          </div>
+          <div class="summary-row">
+            <h6>Total Income</h6>
+            <div id="income-total" class="total-bold">0</div>
+          </div>
+
+
+        </div>
+        <div class="expense-sum">
+          <h5>Expense</h5>
+          <div id="expense-display-row">
+            <!-- <div class="summary-row">
+            <div class="expense-sum-type"></div>
+            <div class="expense-sum-amount"></div>
+          </div> -->
+          </div>
+          <div class="summary-row">
+            <h6>Total Expense</h6>
+            <div id="expense-total" class="total-bold">0</div>
+          </div>
+        </div>
+        <div class="balance-sum">
+          <h5>Balance</h5>
+          <div class="summary-row">
+            <h6>Balance Total</h6>
+            <div id="balance-sum-amount" class="total-bold">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bs"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
