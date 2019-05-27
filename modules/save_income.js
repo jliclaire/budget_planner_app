@@ -15,6 +15,19 @@ function getIncomeType() {
   return incomeType;
 }
 
+function getIncomeAccount() {
+  let incomeAccount = "";
+  incomeAccount = document.querySelector("#income-account").value;
+  document.querySelector("#income-account").value = "Select";
+  return incomeAccount;
+}
+
+function getIncomeDate() {
+  let incomeDate = document.querySelector("#income-date").value;
+  document.querySelector("#income-date").value = "";
+  return incomeDate;
+}
+
 const incomeTransactions = [];
 
 function displayIncomeTransaction(arr) {
@@ -52,14 +65,20 @@ function saveIncome(e) {
   e.preventDefault();
   let amount = addIncomeAmount();
   let type = getIncomeType();
+  let account = getIncomeAccount();
+  let date = getIncomeDate();
   incomeTransactions.push({
     amount: amount,
-    type: type
+    type: type,
+    account: account,
+    date: date
   });
   displayIncomeTransaction(incomeTransactions);
   displayIncomeTotal(incomeTransactions);
 
   calculateBalanceTotal(incomeTransactions, expenseTransactions);
 }
+
+// console.log(incomeTransactions);
 
 export { saveIncome, displayIncomeTotal, incomeTransactions };

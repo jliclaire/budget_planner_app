@@ -14,6 +14,18 @@ function getExpenseType() {
   return expenseType;
 }
 
+function getExpenseAccount() {
+  let expenseAccount = document.querySelector("#exp-account").value;
+  document.querySelector("#exp-account").value = "Select";
+  return expenseAccount;
+}
+
+function getExpenseDate() {
+  let expenseDate = document.querySelector("#exp-date").value;
+  document.querySelector("#exp-date").value = "";
+  return expenseDate;
+}
+
 const expenseTransactions = [];
 
 function displayExpenseTransaction(arr) {
@@ -52,9 +64,13 @@ function saveExpense(e) {
   e.preventDefault();
   let amount = addExpenseAmount();
   let type = getExpenseType();
+  let account = getExpenseAccount();
+  let date = getExpenseDate();
   expenseTransactions.push({
     amount: amount,
-    type: type
+    type: type,
+    account: account,
+    date: date
   });
 
   displayExpenseTransaction(expenseTransactions);
@@ -62,5 +78,7 @@ function saveExpense(e) {
 
   calculateBalanceTotal(incomeTransactions, expenseTransactions);
 }
+
+// console.log(expenseTransactions);
 
 export { saveExpense, displayExpenseTotal, expenseTransactions };

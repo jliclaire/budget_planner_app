@@ -6,6 +6,7 @@ import {
 
 import { saveIncome } from "/modules/save_income.js";
 import { saveExpense } from "/modules/save_expense.js";
+import { saveTransfer } from "/modules/save_transfer.js";
 
 //toggled form interaction
 // add new income
@@ -26,3 +27,5 @@ document.getElementById("exp-save").addEventListener("click", saveExpense);
 document
   .getElementById("show-transfer-form-btn")
   .addEventListener("click", showTransferForm);
+
+document.getElementById("exp-save").addEventListener("click", saveTransfer);
