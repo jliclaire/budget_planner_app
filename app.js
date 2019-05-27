@@ -1,97 +1,73 @@
-// toggle tabs
+import {
+  showIncomeForm,
+  showExpenseForm
+} from "/form_toggle.js";
+
 // add new income
-document.getElementById('show-income-form-btn').addEventListener('click', showIncomeForm);
-
-function showIncomeForm() {
-  document.getElementById('exp-form').style.display = 'none';
-  document.getElementById('income-form').style.display = 'block';
-
-  let showIncomeFormBtn = document.getElementById('show-income-form-btn');
-  showIncomeFormBtn.style.backgroundColor = '#fecc06';
-  showIncomeFormBtn.style.color = '#ffffff';
-
-  let showExpenseFormBtn = document.getElementById('show-expense-form-btn');
-  showExpenseFormBtn.style.backgroundColor = '#ffffff';
-  showExpenseFormBtn.style.color = '#0A136A';
-
-  let formNav = document.getElementById('form-nav');
-  formNav.classList.remove('form-nav-expense-border');
-  formNav.classList.add('form-nav-income-border');
-}
+document
+  .getElementById("show-income-form-btn")
+  .addEventListener("click", showIncomeForm);
 
 // add new expense
-document.getElementById('show-expense-form-btn').addEventListener('click', showExpenseForm);
-
-function showExpenseForm() {
-  document.getElementById('income-form').style.display = 'none';
-  document.getElementById('exp-form').style.display = 'block';
-
-  let showExpenseFormBtn = document.getElementById('show-expense-form-btn');
-  showExpenseFormBtn.style.backgroundColor = '#0A136A';
-  showExpenseFormBtn.style.color = '#ffffff';
-
-  let showIncomeFormBtn = document.getElementById('show-income-form-btn');
-  showIncomeFormBtn.style.backgroundColor = '#ffffff';
-  showIncomeFormBtn.style.color = '#fecc06';
-
-  let formNav = document.getElementById('form-nav');
-  formNav.classList.remove('form-nav-income-border');
-  formNav.classList.add('form-nav-expense-border');
-}
-
+document
+  .getElementById("show-expense-form-btn")
+  .addEventListener("click", showExpenseForm);
 
 //INCOME
 
-document.getElementById('income-save').addEventListener('click', saveIncome);
+document.getElementById("income-save").addEventListener("click", saveIncome);
 
 function addIncomeAmount() {
   let incomeAmount = 0;
-  incomeAmount = document.querySelector('#income-amount').value;
-  document.querySelector('#income-amount').value = null;
+  incomeAmount = document.querySelector("#income-amount").value;
+  document.querySelector("#income-amount").value = null;
   return Number(incomeAmount);
 }
 
 function getIncomeType() {
-  let incomeType = '';
-  incomeType = document.querySelector('#income-category').value;
-  document.querySelector('#income-category').value = "Select";
+  let incomeType = "";
+  incomeType = document.querySelector("#income-category").value;
+  document.querySelector("#income-category").value = "Select";
   return incomeType;
 }
 
 const incomeTransactions = [];
 
 function displayIncomeTransaction(arr) {
-  let incomeDisplayRow = document.getElementById('income-display-row');
-  incomeDisplayRow.innerHTML = '';
+  let incomeDisplayRow = document.getElementById("income-display-row");
+  incomeDisplayRow.innerHTML = "";
   arr.forEach(obj => {
-    let newIncomeRow = document.createElement('div');
-    newIncomeRow.className = 'summary-row';
+    let newIncomeRow = document.createElement("div");
+    newIncomeRow.className = "summary-row";
 
-    let newIncomeType = document.createElement('div');
-    newIncomeType.className = 'income-sum-type';
+    let newIncomeType = document.createElement("div");
+    newIncomeType.className = "income-sum-type";
     newIncomeType.innerHTML = obj.type;
 
-    let newIncomeAmount = document.createElement('div');
-    newIncomeAmount.className = 'income-sum-amount';
+    let newIncomeAmount = document.createElement("div");
+    newIncomeAmount.className = "income-sum-amount";
     newIncomeAmount.innerHTML = obj.amount;
 
     newIncomeRow.appendChild(newIncomeType);
     newIncomeRow.appendChild(newIncomeAmount);
 
     incomeDisplayRow.appendChild(newIncomeRow);
-  })
+  });
 }
 
 function displayIncomeTotal(arr) {
-  const incomeTotal = arr.reduce((acc, currentValue) => acc + currentValue.amount, 0)
-  document.getElementById('income-total').innerHTML = incomeTotal;
+  const incomeTotal = arr.reduce(
+    (acc, currentValue) => acc + currentValue.amount,
+    0
+  );
+  document.getElementById("income-total").innerHTML = incomeTotal;
   return incomeTotal;
 }
 
 function saveIncome(e) {
   e.preventDefault();
   let amount = addIncomeAmount();
-  let type = getIncomeType()
+  let type = getIncomeType();
   incomeTransactions.push({
     amount: amount,
     type: type
@@ -104,56 +80,59 @@ function saveIncome(e) {
 
 //EXPENSE
 
-document.getElementById('exp-save').addEventListener('click', saveExpense);
+document.getElementById("exp-save").addEventListener("click", saveExpense);
 
 function addExpenseAmount() {
   let expenseAmount = 0;
-  expenseAmount = document.querySelector('#exp-amount').value;
-  document.querySelector('#exp-amount').value = null;
+  expenseAmount = document.querySelector("#exp-amount").value;
+  document.querySelector("#exp-amount").value = null;
   return Number(expenseAmount);
 }
 
 function getExpenseType() {
-  let expenseType = document.querySelector('#exp-category').value;
-  document.querySelector('#exp-category').value = 'Select';
+  let expenseType = document.querySelector("#exp-category").value;
+  document.querySelector("#exp-category").value = "Select";
   return expenseType;
 }
 
 const expenseTransactions = [];
 
 function displayExpenseTransaction(arr) {
-  let expenseDisplayRow = document.getElementById('expense-display-row');
-  expenseDisplayRow.innerHTML = '';
+  let expenseDisplayRow = document.getElementById("expense-display-row");
+  expenseDisplayRow.innerHTML = "";
 
   arr.forEach(obj => {
-    let newExpenseRow = document.createElement('div');
-    newExpenseRow.className = 'summary-row';
+    let newExpenseRow = document.createElement("div");
+    newExpenseRow.className = "summary-row";
 
-    let newExpenseType = document.createElement('div');
-    newExpenseType.className = 'expense-sum-type';
+    let newExpenseType = document.createElement("div");
+    newExpenseType.className = "expense-sum-type";
     newExpenseType.innerHTML = obj.type;
 
-    let newExpenseAmount = document.createElement('div');
-    newExpenseAmount.className = 'expense-sum-amount';
+    let newExpenseAmount = document.createElement("div");
+    newExpenseAmount.className = "expense-sum-amount";
     newExpenseAmount.innerHTML = obj.amount;
 
     newExpenseRow.appendChild(newExpenseType);
     newExpenseRow.appendChild(newExpenseAmount);
 
     expenseDisplayRow.appendChild(newExpenseRow);
-  })
+  });
 }
 
 function displayExpenseTotal(arr) {
-  const expenseTotal = arr.reduce((acc, currentValue) => acc + currentValue.amount, 0);
-  document.getElementById('expense-total').innerHTML = expenseTotal;
+  const expenseTotal = arr.reduce(
+    (acc, currentValue) => acc + currentValue.amount,
+    0
+  );
+  document.getElementById("expense-total").innerHTML = expenseTotal;
   return expenseTotal;
 }
 
 function saveExpense(e) {
   e.preventDefault();
   let amount = addExpenseAmount();
-  let type = getExpenseType()
+  let type = getExpenseType();
   expenseTransactions.push({
     amount: amount,
     type: type
@@ -168,6 +147,8 @@ function saveExpense(e) {
 //calculate balance
 
 function calculateBalanceTotal(incomeArr, expenseArr) {
-  let balanceTotal = displayIncomeTotal(incomeTransactions) - displayExpenseTotal(expenseTransactions);
-  document.getElementById('balance-sum-amount').innerHTML = balanceTotal;
+  let balanceTotal =
+    displayIncomeTotal(incomeTransactions) -
+    displayExpenseTotal(expenseTransactions);
+  document.getElementById("balance-sum-amount").innerHTML = balanceTotal;
 }
