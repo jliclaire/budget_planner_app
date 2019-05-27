@@ -1,6 +1,7 @@
 import {
   showIncomeForm,
-  showExpenseForm
+  showExpenseForm,
+  showTransferForm
 } from "/form_toggle.js";
 
 // add new income
@@ -12,6 +13,11 @@ document
 document
   .getElementById("show-expense-form-btn")
   .addEventListener("click", showExpenseForm);
+
+// add new transfer
+document
+  .getElementById("show-transfer-form-btn")
+  .addEventListener("click", showTransferForm);
 
 //INCOME
 

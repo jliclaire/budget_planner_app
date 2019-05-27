@@ -97,6 +97,39 @@
               <button id="exp-save">Save</button>
             </form>
           </div>
+
+          <!-- show transfer form (default: hidden) -->
+          <div class="transfer-form-style form">
+            <form id="transfer-form" action="">
+              <div>
+                <label for="from-account">From</label>
+                <select name="" id="from-account">
+                  <option class="select">Select</option>
+                  <option class="bank">Bank</option>
+                  <option class="cash">Cash</option>
+                  <option class="creditcard">Credit Card</option>
+                </select>
+              </div>
+              <div>
+                <label for="to-account">To</label>
+                <select name="" id="to-account">
+                  <option class="select">Select</option>
+                  <option class="bank">Bank</option>
+                  <option class="cash">Cash</option>
+                  <option class="creditcard">Credit Card</option>
+                </select>
+              </div>
+              <div>
+                <label for="transfer-amount">Amount</label>
+                <input type="number" id="transfer-amount" />
+              </div>
+              <div>
+                <label for="exp-date">Date</label>
+                <input type="date" />
+              </div>
+              <button id="transfer-save">Save</button>
+            </form>
+          </div>
         </div>
 
         <div id="summary">
